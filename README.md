@@ -20,40 +20,59 @@ At present the model only predicts the curved section of the nozzle and does not
 -> results 	: contains images of the training and test data from the linear-regression model.
 
 ##### Files
-costFuncReg :
+
+`costFuncReg`
+
 -> function file 
+
 -> computes cost-function (J) and gradient (grad)
 
-create_feature_matrix :
+`create_feature_matrix`
+
 -> function file 
+
 -> creates feature matrix "X"
 
-feature_scaling :
+`feature_scaling`
+
 -> function file 
+
 -> implements mean-normalization on feature-matrix "X" 
 
-normalEq : 
+`normalEq`
+
 -> function file 
+
 -> computes the closed-form solution to linear-regression using the normal equations
 
-main_1 :
+`main_1`
+
 -> executable
+
 -> implements linear-regression on a single nozzle contour contained in "nozzle_1.txt" file
 
-main_2_train :
+`main_2_train`
+
 -> executable
+
 -> uses "nozzle_train.txt" to train linear-regression model
 
-main_2_test :
+`main_2_test`
+
 -> executable
+
 -> tests the parameters obtained from "main_2_train" on "nozzle_test.txt"
 
-main_3_train_normalEq :
+`main_3_train_normalEq`
+
 -> executable
+
 -> uses "nozzle_train.txt" to obtain the closed-form solution to linear-regression using the normal equations
 
-main_3_test_normalEq :
+`main_3_test_normalEq`
+
 -> executable
+
 -> tests the parameters obtained from "main_3_train_normalEq" on "nozzle_test.txt"
 
 ---------------------------
