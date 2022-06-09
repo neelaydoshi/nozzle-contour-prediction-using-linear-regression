@@ -21,7 +21,7 @@ Only the curved section of the nozzle is being saved. The very first segment (wh
 
 `main_saving.m`
 
--> function file 
+-> executable
 
 -> generates and saves the "nozzle_1", "nozzle_train" and "nozzle_test" datasets
 
