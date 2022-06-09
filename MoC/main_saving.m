@@ -4,9 +4,9 @@
 %%%%%%%%%%%%%%
 %
 % This file generates the following datasets:
-% -> nozzle_1
-% -> nozzle_train 
-% -> nozzle_test
+% -> nozzle_1.txt
+% -> nozzle_train.txt
+% -> nozzle_test.txt
 %
 %%%%%%%%%%%%%%
 
@@ -47,6 +47,7 @@ gamma   = 1.4;
 i = 0;
 
 %%%%%%%%%%%%%%
+fileID = fopen('data/nozzle_train.txt', 'w');
 fprintf('############# \n');
 for M0 = 1.4:0.2:2.2
 
@@ -56,13 +57,12 @@ for M0 = 1.4:0.2:2.2
         fprintf('i = %d \t M0 = %.2f \t Me = %.2f \n', i, M0, Me);
 
         Table = MoC(M0, Me, n, gamma);
-        fileID = fopen('data/nozzle_train.txt','a+');
         fprintf(fileID,'%.4f,%.4f,%.2f,%.2f\n', Table);
-        fclose(fileID);       
-
     end
 end
 
+%%%%%%%%%%%%%%
+fclose(fileID);       
 fprintf('############# \n');
 fprintf('Number of Nozzles \t\t : %d \n', i );
 fprintf('Number of Training Examples \t : %d \n', i*n );
@@ -81,6 +81,7 @@ gamma   = 1.4;
 i = 0;
 
 %%%%%%%%%%%%%%
+fileID = fopen('data/nozzle_test.txt', 'w');
 fprintf('############# \n');
 for M0 = 1.7 : 0.2 : 2.1
 
@@ -90,13 +91,13 @@ for M0 = 1.7 : 0.2 : 2.1
         fprintf('i = %d \t M0 = %.2f \t Me = %.2f \n', i, M0, Me);
 
         Table = MoC(M0, Me, n, gamma);
-        fileID = fopen('data/nozzle_test.txt','a+');
         fprintf(fileID,'%.4f,%.4f,%.2f,%.2f\n', Table);
-        fclose(fileID);       
 
     end
 end
 
+%%%%%%%%%%%%%%
+fclose(fileID);       
 fprintf('############# \n');
 fprintf('Number of Nozzles \t\t : %d \n', i );
 fprintf('Number of Testing Examples \t : %d \n', i*n );
